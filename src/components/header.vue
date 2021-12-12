@@ -15,7 +15,8 @@
 
     <div class="col-3 d-flex align-items-center justify-content-end">
       <div class="d-flex">
-      <input type="text" placeholder="Cerca" v-model="searchString">
+        <!-- quando l'uttente premera invio o sul bottone in pagina mandera searchString che conterra ciò che ha scritto per la ricerca -->
+      <input type="text" placeholder="Cerca" v-model="searchString" @keyup.enter="$emit('search', searchString)">
       <button @click="$emit('search', searchString)"><i class="fas fa-search"></i></button>
       </div>
       <div>BAMBINI</div>

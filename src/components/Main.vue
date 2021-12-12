@@ -4,13 +4,14 @@
       <h3>ORIGINALI NETFLIX</h3>
       <h5>Film</h5>
     </div>
+<!-- costruisce la lista di film -->
     <div class="col-12">
       <div class="row">
         <Card
           class="col-2"
-          v-for="film in superlista"
-          :key="film.id"
-          :background="film.poster_path"
+          v-for="film in FilmList" :key="film.id"
+
+          :backgroundImage="film.poster_path"
           :title="film.title"
           :originalTitle="film.original_title"
           :language="film.original_language"
@@ -18,19 +19,23 @@
         />
       </div>
     </div>
+
+
     <div class="col-12">
         <h5>Serie TV</h5>
     </div>
+
+<!-- costruisce la lista di serie tv -->
     <div class="col-12">
       <div class="row">
         <Card
           class="col-2"
-          v-for="tvShow in TVList"
-          :key="tvShow.id"
-          :background="tvShow.poster_path"
+          v-for="tvShow in TVList" :key="tvShow.id"
+
+          :backgroundImage="tvShow.poster_path"
           :title="tvShow.name"
-          :originalTitle="tvShow.original_title"
-          :language="tvShow.original_name"
+          :originalTitle="tvShow.original_name"
+          :language="tvShow.original_language"
           :vote="tvShow.vote_average"
         />
       </div>
@@ -46,7 +51,7 @@ export default {
     Card,
   },
   props: {
-    superlista: Array,
+    FilmList: Array,
     TVList:Array
   },
 };
