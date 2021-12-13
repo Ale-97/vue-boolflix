@@ -87,5 +87,16 @@ export default {
 body {
   background: rgb(27, 27, 27);
   color: white;
+
+&::-webkit-scrollbar {
+  width: 6px; 
+  margin-left:10px ;
 }
+&::-webkit-scrollbar-thumb {
+  background-color: red;    
+  border-radius: 20px;       
+}
+}
+
+
 </style>
