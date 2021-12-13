@@ -23,7 +23,7 @@
           <div v-for="element in this.numberStar" :key="element.id">
             <!-- se il voto è superiore al numero di "numberStar" in quel momento restituirà un icona con la classe star che colorerà la stella di giallo -->
             <i v-if="star() >= element" class="fas fa-star star"></i>
-            <i v-else class="fas fa-star"></i>
+            <i v-else class="far fa-star"></i>
           </div>
         </div>
 
