@@ -28,21 +28,8 @@ export default {
   },
   created() {
     //Prima chiamata per visualizzare del contenuto alla creazione della pagina
-    axios//chiamat lista film popolari
-      .get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=f3e38786a7566bd6e81d253fd6cbc4b4&language=en-US&page=1&include_adult=false"
-      )
-      .then((result) => {
-        this.filmList = result.data.results;
-      });
-    axios
-      .get(//chiamata lista serie televisive popolari
-        "https://api.themoviedb.org/3/tv/popular?api_key=f3e38786a7566bd6e81d253fd6cbc4b4&language=it-IT&page=1&include_adult=false"
-      )
-      .then((result) => {
-        this.TVList = result.data.results;
-      });
-  },
+  this.query("") //film e serie tv più popolari
+   },
 
   methods: {
     //questa funzione verra chiamata ogni volta che si cercherà qualcosa e restituira delle nuove liste in tvList e filmList
