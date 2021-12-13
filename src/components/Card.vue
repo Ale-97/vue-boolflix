@@ -15,12 +15,14 @@
         <div v-else>
           <div>{{ this.title }}</div>
         </div>
+
       <!-- restituisce l'immagine con la bandiera corrispondente alla lingua del film-->
           <img class="flag" :src="flag(this.language)" alt="" />
+
       <!-- restituisce delle stelle che corrispondo al voto del film o della serie tv-->
         <div class="d-flex">
           <!-- ciclo con un dato di 5 elementi per generare le mie 5 icone di stelle -->
-          <div v-for="element in this.numberStar" :key="element.id">
+          <div v-for="element in 5" :key="element">
             <!-- se il voto è superiore al numero di "numberStar" in quel momento restituirà un icona con la classe star che colorerà la stella di giallo -->
             <i v-if="star() >= element" class="fas fa-star star"></i>
             <i v-else class="far fa-star"></i>
@@ -41,9 +43,8 @@ export default {
     return {
       IMG: "http://image.tmdb.org/t/p/w500/" + this.backgroundImage,
       icon: "",
-      numberStar: [1, 2, 3, 4, 5],// Serve per ciclare e creare le stelle di valutazione, la numerazione non è casuale , il numero 
-    };                            //coincide sia con il numero della stella nella creazione sia con il suo valore così che
-  },                              // poi possa verificare che il valore del voto sia superiore alla stella cdreata in quel momento
+    };                            
+  }, 
 
   props: {
     backgroundImage: String,
