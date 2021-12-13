@@ -15,13 +15,8 @@
         <div v-else>
           <div>{{ this.title }}</div>
         </div>
-      <!-- restituisce l'immagine con la bandiera corrispondente alla lingua del film(per ora solo se la lingua è inglese o italiana) -->
-        <div v-if="this.language === 'en'">
-          <img class="flag" src="../assets/Inghilterra.png" alt="" />
-        </div>
-        <div v-else-if="this.language === 'it'">
-          <img class="flag" src="../assets/Italia.png" alt="" />
-        </div>
+      <!-- restituisce l'immagine con la bandiera corrispondente alla lingua del film-->
+          <img class="flag" :src="flag(this.language)" alt="" />
       <!-- restituisce delle stelle che corrispondo al voto del film o della serie tv-->
         <div class="d-flex">
           <!-- ciclo con un dato di 5 elementi per generare le mie 5 icone di stelle -->
@@ -63,6 +58,10 @@ export default {
       this.icon = Math.ceil(numberStar);
       return this.icon;
     },
+    // restituisce il percorso per l'immagine della bandiera
+    flag(flag){
+      return require("../assets/flags/"+ flag + ".png")
+    }
   },
 };
 </script>
