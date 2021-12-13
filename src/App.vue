@@ -28,16 +28,16 @@ export default {
   },
   created() {
     //Prima chiamata per visualizzare del contenuto alla creazione della pagina
-    axios//chiamat lista film
+    axios//chiamat lista film popolari
       .get(
-        "https://api.themoviedb.org/3/search/movie?api_key=f3e38786a7566bd6e81d253fd6cbc4b4&language=en-US&query=a&page=1&include_adult=false"
+        "https://api.themoviedb.org/3/movie/popular?api_key=f3e38786a7566bd6e81d253fd6cbc4b4&language=en-US&page=1&include_adult=false"
       )
       .then((result) => {
         this.filmList = result.data.results;
       });
     axios
-      .get(//chiamata lista serie televisive
-        "https://api.themoviedb.org/3/search/tv?api_key=f3e38786a7566bd6e81d253fd6cbc4b4&language=it-IT&page=1&query=a&include_adult=false"
+      .get(//chiamata lista serie televisive popolari
+        "https://api.themoviedb.org/3/tv/popular?api_key=f3e38786a7566bd6e81d253fd6cbc4b4&language=it-IT&page=1&include_adult=false"
       )
       .then((result) => {
         this.TVList = result.data.results;
@@ -76,15 +76,15 @@ export default {
           });
       } else {//se "valore" non ha un contenuto la chiamata restituira la lista generica iniziale
         axios
-          .get(//lista film
-            "https://api.themoviedb.org/3/search/movie?api_key=f3e38786a7566bd6e81d253fd6cbc4b4&language=en-US&query=a&page=1&include_adult=false"
+          .get(//lista film popolari
+        "https://api.themoviedb.org/3/movie/popular?api_key=f3e38786a7566bd6e81d253fd6cbc4b4&language=en-US&page=1&include_adult=false"
           )
           .then((result) => {
             this.filmList = result.data.results;
           });
         axios
-          .get(//lista serie tv
-            "https://api.themoviedb.org/3/search/tv?api_key=f3e38786a7566bd6e81d253fd6cbc4b4&language=it-IT&page=1&query=a&include_adult=false"
+          .get(//lista serie tv popolari
+        "https://api.themoviedb.org/3/tv/popular?api_key=f3e38786a7566bd6e81d253fd6cbc4b4&language=it-IT&page=1&include_adult=false"
           )
           .then((result) => {
             this.TVList = result.data.results;
